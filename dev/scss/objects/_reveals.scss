@@ -1,0 +1,55 @@
+%reveal-from {
+  $reveal-y: var(--space-xl);
+  $index-delay: 0.05s;
+  $stagger-delay: 0.05s;
+
+  transform: translateY(var(--reveal-y, #{$reveal-y}));
+  opacity: 0.001;
+  transition: $transition-in-view;
+  transition-delay: calc(var(--index-delay, #{$index-delay}) * var(--index, 0) + var(--stagger-delay, #{$stagger-delay}) * var(--stagger, 0));
+}
+
+%reveal-to {
+  transform: none;
+  opacity: 1;
+}
+
+%reveal {
+  @extend %reveal-from;
+
+  html.is-ready &.is-inview,
+  html.is-ready .is-inview & {
+    @extend %reveal-to;
+  }
+}
+
+%reveal-childs {
+  $limit: 10;
+
+  > * {
+    @extend %reveal-from;
+  }
+
+  > *:nth-child(n + #{$limit}) {
+    --stagger: #{$limit};
+  }
+
+  html.is-ready &.is-inview > *,
+  html.is-ready .is-inview & > * {
+    @extend %reveal-to;
+  }
+
+  @for $i from 1 through $limit {
+    > *:nth-child(#{$i}) {
+      --stagger: #{$i};
+    }
+  }
+}
+
+.o-reveal {
+  @extend %reveal;
+}
+
+.o-reveal-childs {
+  @extend %reveal-childs;
+}

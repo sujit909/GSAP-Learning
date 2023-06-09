@@ -1,0 +1,20 @@
+.c-main {
+  --flow: var(--space-section);
+  position: relative;
+  z-index: 50;
+
+  @extend %flow;
+
+  html:not(.has-scroll-smooth) & {
+    overflow: hidden;
+  }
+
+  & + & {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
+

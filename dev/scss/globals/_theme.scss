@@ -1,0 +1,44 @@
+@use 'sass:color';
+@use 'sass:map';
+
+@include font-face("Sailec", "../fonts/sailecRegular", 400, "normal", "woff2", swap);
+@include font-face("Sailec", "../fonts/sailecBold", 700, "normal", "woff2", swap);
+@include font-face("Sailec", "../fonts/sailecLight", 300, "normal", "woff2", swap);
+@include font-face("Sailec", "../fonts/sailecMedium", 500, "normal", "woff2", swap);
+@include font-face("NewSlab", "../fonts/newslab_thin", 300, "normal", "woff2", swap);
+
+@each $name, $values in $themes {
+  [class*='theme-#{$name}'],
+  [data-theme='#{$name}'] {
+    $bg: map.get($values, 'bg');
+    $text: map.get($values, 'text');
+    $text-invert: map.get($values, 'text-invert');
+    $bg-color: color($bg);
+
+    --theme-bg-color: #{'var(--color-' + $bg + ')'};
+    --theme-text-color: #{'var(--color-' + $text + ')'};
+    --theme-text-invert-color: #{'var(--color-' + $text-invert + ')'};
+    //--theme-bg-color-rgb: #{color.red($bg-color), color.green($bg-color), color.blue($bg-color)};
+  }
+}
+
+body {
+  $theme: map.get($themes, $theme-default);
+  $bg: map.get($theme, 'bg');
+  $text: map.get($theme, 'text');
+  $text-invert: map.get($theme, 'text-invert');
+
+  --theme-bg-color: #{'var(--color-' + $bg + ')'};
+  --theme-text-color: #{'var(--color-' + $text + ')'};
+  --theme-text-invert-color: #{'var(--color-' + $text-invert + ')'};
+  --body-color: var(--theme-text-color);
+
+  transition: color $transition-duration-theme;
+}
+
+html{
+visibility: hidden;
+  &.is-ready{
+    visibility: visible;
+  }
+}

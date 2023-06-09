@@ -1,0 +1,131 @@
+.c-figure {
+  clip-path: inset(0 round var(--border-radius-small));
+  position: relative;
+  overflow: hidden;
+}
+
+.c-figure--zoom {
+  transition: $transition-in-view-zoom;
+  transform: scale(0.6);
+  //scale: .6;
+
+  .c-figure__image {
+    transition: inherit;
+    transform: scale(1.8);
+    //transform: 1.8;
+    opacity: 0;
+  }
+
+  &.is-inview,
+  .is-inview & {
+    transform: scale(1);
+
+    .c-figure__image {
+      transform: scale(1);
+    }
+  }
+}
+
+.c-figure__mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  background-color: rgb(0 0 0 / 10%);
+  transition: opacity 0.15s;
+
+  .lazyloaded + & {
+    opacity: 0;
+  }
+}
+
+
+//.grid{
+//  display: grid;
+//  background: red;
+//  grid-template-columns: repeat(5,1fr);
+//  grid-template-rows: repeat(5,1fr);
+//  grid-template-areas: "a b c d e"
+//                        "a b c d e"
+//"a b c d e"
+//"a b c d e"
+//"a b c d e";
+//
+//}
+//
+//.area-a{
+//  grid-area: a;
+//}.area-b{
+//  grid-area: b;
+//}.area-c{
+//  grid-area: c;
+//}.area-d{
+//  grid-area: d;
+//}.area-e{
+//  grid-area: e;
+//}
+
+
+//.items {
+//  max-width: 1200px;
+//  display: flex;
+//  gap: 20px;
+//}
+//
+//.item {
+//  width: 25%;
+//  box-sizing: border-box;
+//  display: inline-block;
+//  vertical-align: top;
+//
+//  display: flex;
+//  flex-direction: column;
+//
+//}
+//
+//
+//
+//.item__heading {
+//  background-color: #d4d0f5;
+//  padding: 10px;
+//  text-align: center;
+//  border: 1px solid #bbbbbb;
+//  display: flex;
+//  order: 2;
+//}
+//
+//.item__content {
+//  padding: 10px;
+//  border-left: 1px solid #bbbbbb;
+//  border-right: 1px solid #bbbbbb;
+//  display: flex;
+//  order:1;
+//  flex-grow: 1;
+//}
+//
+//.item__features {
+//  padding: 10px;
+//  border-top: 1px solid #bbbbbb;
+//  border-left: 1px solid #bbbbbb;
+//  border-right: 1px solid #bbbbbb;
+//  background-color: #f7cbb1;
+//  display: flex;
+//  order:3
+//}
+//
+//.item__features ul {
+//  margin: 0px;
+//  display: flex;
+//  order: 4;
+//}
+//
+//.item__price {
+//  background-color: #e0f6d9;
+//  padding: 10px;
+//  text-align: center;
+//  border: 1px solid #bbbbbb;
+//  display: flex;
+//  order: 5;
+//}

@@ -1,0 +1,409 @@
+$fluid-verbose: true;
+$fluid-min-width: 320;
+$fluid-max-width: 1200;
+$fluid-min-size: 16;
+$fluid-max-size: 32;
+$fluid-min-scale: 1.125;
+$fluid-max-scale: 1.25;
+
+$fluid-steps: (0: 1, 1: 1.5, 2: 2, 3: 2.5);
+$fluid-spaces: (s: 1, m: 1.5, l: 2, xl: 2.5);
+//$fluid-spaces: (
+        //        3xs: 0.25,
+        //        2xs: 0.5,
+        //        xs: 0.75,
+        //        s: 1,
+        //        m: 1.5,
+        //        l: 2,
+        //        xl: 3,
+        //        2xl: 4,
+        //        3xl: 6
+//);
+$fluid-spaces-multipliers: (0.31, 0.56, 0.88, 18, 1.5, 2, 3, 4, 6);
+$fluid-space-custom-pairs: ('s-l', 'l-2xl', 'm-xl');
+$fluid-min-size: 0.31rem;
+$fluid-max-size: 7.50rem;
+$fluid-bp: 0.22vw;
+
+$transition-in-view-zoom: transform 1.1s cubic-bezier(.165,.84,.44,1),opacity .3s;
+
+$flow : var(--space);
+
+$transition-in-view-zoom: transform 1.1s cubic-bezier(.165,.84,.44,1),opacity .3s;
+$transition-in-view: transform 1.1s cubic-bezier(.165,.84,.44,1),opacity .3s;
+
+$colors: (
+        "primary": #333,
+        "secondary": #666,
+        "tertiary": #999,
+        "quaternary": #ccc,
+        "quinary": #eee,
+        "white": #fff
+);
+
+$container-padding: (
+        "sm": var(--space-3xs),
+        //"md": 24,
+        //"lg": 32,
+        //"xl": 40
+);
+
+$gutter-x: (
+        "sm":   var(--grid-gutter),
+
+);
+
+$gutter-y: (
+        "sm": var(--grid-gutter),
+
+);
+$themes: (
+        "default": (
+                "bg": "brown",
+                "text": "white",
+                "text-invert": "primary"
+        ),
+        "dark": (
+                "bg": "quinary",
+                "text": "primary",
+                "text-invert": "quinary"
+        ),
+        "light": (
+                "bg": "primary",
+                "text": "primary",
+                "text-invert": "quinary"
+        )
+);
+
+$colors: (
+        "primary": #333,
+        "secondary": #666,
+        "tertiary": #999,
+        "quaternary": #ccc,
+        "quinary": #eee
+);
+
+$theme-default: "default";
+
+$transition-duration-theme: 0.2s;
+
+$font-sans-serif: "Sailec",Helvetica,sans-serif;
+$font-serif: "NewSlab", serif;
+
+$logo-width: 500;
+$logo-height: 150;
+
+$font-smoothing: antialiased;
+$tap-highlight-color: red;
+
+$breakpoints: (
+        "sm": 576px,
+        "md": 768px,
+        "lg": 992px,
+        "xl": 1200px
+);
+
+$colors: (
+        "primary": #333,
+        "secondary": #666,
+        "tertiary": #999,
+        "quaternary": #ccc,
+        "quinary": #eee,
+        "yellow": #caf21f,
+        "white": #fff,
+        "coal": #191d1c,
+"brown": #534d40,
+"elephant": #959185,
+"dove": #bdb8b4,
+"almond": #f0f0ea,
+"green": #bec5bd,
+
+);
+
+$container-padding: (
+        "sm": 16px,
+        "md": 24px,
+        "lg": 32px,
+        "xl": 40px
+);
+
+$gutter-x: (
+        "sm": 16px,
+        "md": 24px,
+        "lg": 32px,
+        "xl": 40px
+);
+$grid-columns: 12;
+
+
+// UTILITY GENERATOR
+//$utilities--generate: true !default;
+//$utilities--important: true !default;
+//
+//$utilities--config: (
+//        'bg-': (
+//                'name': 'Background',
+//                'items': $colors--named-colors,
+//                'variable': '--color--',
+//                'property': 'background',
+//        ),
+//        'c-': (
+//                'name': 'Color',
+//                'items': $colors--named-colors,
+//                'variable': '--color--',
+//                'property': 'color',
+//        ),
+//        'd': (
+//                'name': 'Display',
+//                'items': (
+//                        'f': 'flex',
+//                        'b': 'block',
+//                        'n': 'none',
+//                        'i': 'inline',
+//                        'ib': 'inline-block',
+//                ),
+//                'responsive': true,
+//                'property': 'display'
+//        ),
+//        'o': (
+//                'name': 'Opacity',
+//                'items': (
+//                        '0': 0,
+//                        '25': 0.25,
+//                        '50': 0.5,
+//                        '75': 0.75,
+//                        '100': 1,
+//                ),
+//                'property': 'opacity',
+//        ),
+//        'ai-': (
+//                'name': 'Flex Align',
+//                'items': (
+//                        'center': 'center',
+//                        'top': 'flex-start',
+//                        'bottom': 'flex-end',
+//                        'baseline': 'baseline',
+//                        'stretch': 'stretch',
+//                ),
+//                'responsive': true,
+//                'property': 'align-items',
+//        ),
+//        'j-': (
+//                'name': 'Flex Justify',
+//                'items': (
+//                        'left': 'flex-start',
+//                        'right': 'flex-end',
+//                        'center': 'center',
+//                        'around': 'space-around',
+//                        'between': 'space-between',
+//                ),
+//                'responsive': true,
+//                'property': 'justify-content',
+//        ),
+//        'ta-': (
+//                'name': 'Text Align',
+//                'items': (
+//                        'left': 'left',
+//                        'center': 'center',
+//                        'right': 'right',
+//                ),
+//                'property': 'text-align',
+//        ),
+//        'tt-': (
+//                'name': 'Text Transform',
+//                'items': (
+//                        'uppercase': 'uppercase',
+//                        'lowercase': 'lowercase',
+//                        'capitalize': 'capitalize',
+//                ),
+//                'property': 'text-transform',
+//        ),
+//        'td-': (
+//                'name': 'Text Decoration',
+//                'items': (
+//                        'underline': 'underline',
+//                        'none': 'none',
+//                ),
+//                'property': 'text-decoration',
+//        ),
+//        'ws-': (
+//                'name': 'Text Wrapping',
+//                'items': (
+//                        'wrap': 'normal',
+//                        'nowrap': 'nowrap',
+//                ),
+//                'property': 'white-space',
+//        ),
+//        'm-': (
+//                'name': 'Margin all sides',
+//                'items': $layout-spacing--variants,
+//                'responsive': true,
+//                'variable': '--layout-spacing--',
+//                'property': 'margin'
+//        ),
+//        'mx-': (
+//                'name': 'Margin horizontal',
+//                'items': $layout-spacing--variants,
+//                'responsive': true,
+//                'variable': '--layout-spacing--',
+//                'property': 'margin-right' 'margin-left',
+//        ),
+//        'my-': (
+//                'name': 'Margin vertical',
+//                'items': $layout-spacing--variants,
+//                'responsive': true,
+//                'variable': '--layout-spacing--',
+//                'property': 'margin-top' 'margin-bottom',
+//        ),
+//        'mt-': (
+//                'name': 'Margin top',
+//                'items': $layout-spacing--variants,
+//                'responsive': true,
+//                'variable': '--layout-spacing--',
+//                'property': 'margin-top',
+//        ),
+//        'mr-': (
+//                'name': 'Margin right',
+//                'items': $layout-spacing--variants,
+//                'responsive': true,
+//                'variable': '--layout-spacing--',
+//                'property': 'margin-right',
+//        ),
+//        'mb-': (
+//                'name': 'Margin bottom',
+//                'items': $layout-spacing--variants,
+//                'responsive': true,
+//                'variable': '--layout-spacing--',
+//                'property': 'margin-bottom',
+//        ),
+//        'ml-': (
+//                'name': 'Margin left',
+//                'items': $layout-spacing--variants,
+//                'responsive': true,
+//                'variable': '--layout-spacing--',
+//                'property': 'margin-left',
+//        ),
+//        'p-': (
+//                'name': 'Padding all sides',
+//                'items': $layout-spacing--variants,
+//                'responsive': true,
+//                'variable': '--layout-spacing--',
+//                'property': 'padding'
+//        ),
+//        'px-': (
+//                'name': 'Padding horizontal',
+//                'items': $layout-spacing--variants,
+//                'responsive': true,
+//                'variable': '--layout-spacing--',
+//                'property': 'padding-right' 'padding-left',
+//        ),
+//        'py-': (
+//                'name': 'Padding vertical',
+//                'items': $layout-spacing--variants,
+//                'responsive': true,
+//                'variable': '--layout-spacing--',
+//                'property': 'padding-top' 'padding-bottom',
+//        ),
+//        'pt-': (
+//                'name': 'Padding top',
+//                'items': $layout-spacing--variants,
+//                'responsive': true,
+//                'variable': '--layout-spacing--',
+//                'property': 'padding-top',
+//        ),
+//        'pr-': (
+//                'name': 'Padding right',
+//                'items': $layout-spacing--variants,
+//                'responsive': true,
+//                'variable': '--layout-spacing--',
+//                'property': 'padding-right',
+//        ),
+//        'pb-': (
+//                'name': 'Padding bottom',
+//                'items': $layout-spacing--variants,
+//                'responsive': true,
+//                'variable': '--layout-spacing--',
+//                'property': 'padding-bottom',
+//        ),
+//        'pl-': (
+//                'name': 'Padding left',
+//                'items': $layout-spacing--variants,
+//                'responsive': true,
+//                'variable': '--layout-spacing--',
+//                'property': 'padding-left',
+//        ),
+//        'w-': (
+//                'name': 'Grid widths',
+//                'items': $layout--widths,
+//                'responsive': true,
+//                'property': 'width',
+//        ),
+//        'push-': (
+//                'name': 'Grid offsets',
+//                'items': $layout--widths,
+//                'responsive': true,
+//                'property': 'margin-left',
+//        ),
+//        'measure-': (
+//                'name': 'Measure',
+//                'items': $typography--measures,
+//                'variable': '--typography-measure--',
+//                'property': 'max-width',
+//        ),
+//        'text-': (
+//                'name': 'Text Size',
+//                'items': $typography--sizes,
+//                'variable': '--typography-size--',
+//                'responsive': true,
+//                'property': 'font-size',
+//        ),
+//        'lh-': (
+//                'name': 'Text line-height',
+//                'items': $typography--leading,
+//                'variable': '--typography-leading--',
+//                'property': 'line-height',
+//        ),
+//        'ls-': (
+//                'name': 'Text letter spacing',
+//                'items': $typography--tracking,
+//                'variable': '--typography-tracking--',
+//                'property': 'letter-spacing',
+//        ),
+//        'ff-': (
+//                'name': 'Text font family',
+//                'items': $typography--fonts,
+//                'variable': '--typography-font--',
+//                'property': 'font-family',
+//        ),
+//        'fw-': (
+//                'name': 'Text font weight',
+//                'items': $typography--weights,
+//                'property': 'font-weight',
+//        ),
+//        'order': (
+//                'name': 'Flex Order',
+//                'items': (
+//                        'n1': -1,
+//                        '1': 1,
+//                        '2': 2,
+//                        '3': 3,
+//                        '4': 4,
+//                        '5': 5,
+//                ),
+//                'responsive': true,
+//                'property': 'order',
+//        ),
+//        'z': (
+//                'name': 'Z Index',
+//                'items': (
+//                        '0':    0,
+//                        '10':   10,
+//                        '20':   20,
+//                        '30':   30,
+//                        '40':   40,
+//                        '50':   50,
+//                        'auto': auto,
+//                ),
+//                'property': 'z-index'
+//        ),
+//) !default;

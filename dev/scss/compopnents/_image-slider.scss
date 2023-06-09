@@ -1,0 +1,37 @@
+.c-image-slider {
+  overflow: hidden;
+
+  .swiper {
+    overflow: visible;
+    margin: 0 ;
+  }
+
+  .swiper-slide {
+    width: 34.1%;
+    height: auto;
+    padding: 0 calc(var(--column-width-gutter) * 0.5);
+    background: transparent;
+    opacity: 0;
+  }
+}
+
+.c-image-slider__col {
+  // opacity: 0.01;
+  //transform: translate(25%, 0);
+  transition: $transition-in-view;
+
+  @include media-breakpoint-up(sm) {
+    --column-span: 10;
+    --column-start: 2;
+  }
+
+  html.is-ready &.is-inview {
+    // opacity: 1;
+    transform: none;
+  }
+}
+
+.c-image-slider__image {
+  width: auto;
+  height: 60vh;
+}

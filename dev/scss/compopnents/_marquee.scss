@@ -1,0 +1,29 @@
+.c{
+  &-marquee{
+    padding: var(--space) 0;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    gap: var(--space-2xl-3xl);
+    &--link{
+      text-decoration: none;
+      color: var(--color-white);
+      &:hover{
+        color: var(--color-accent);
+      }
+    }
+    .ticker-items{
+      text-decoration: none;
+      white-space: nowrap;
+      color: var(--white);
+      gap: var(--space-2xl-3xl);
+      display: inline-flex;
+      flex-wrap: nowrap;
+    }
+    &--list{
+      display: inline-flex;
+      flex-wrap: nowrap;
+      gap: var(--space-2xl-3xl);
+      width: 100%;
+    }
+  }
+}

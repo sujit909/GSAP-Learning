@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('includes/head.html',{'pageTitle':'FED Starter Kit'})
+</head>
+
+<body>
+<div id="smooth-wrapper">
+    <div id="smooth-content">
+        <main class="c-main">
+
+                    <nav class="navbar">
+                        <div class="logo-icon">
+                            <ion-icon name="heart"></ion-icon>
+                        </div>
+                        <div class="logo">Outside</div>
+                        <div class="search">
+                            <ion-icon name="ios-search"></ion-icon>
+                        </div>
+                    </nav>
+                    
+                    <div class="img">
+                        <img src="images/Container.webp" alt="">
+                    </div>
+                    
+                    <div class="title">
+                        <h1>
+                            <span class="text-one">Information <label>Technology</label></span>
+                        </h1>
+                        <h2><span>O</span>utside</h2>
+
+                        <p>
+                            <span class="text-three">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, modi quam. At facilis totam quidem
+                                enim nihil voluptatum omnis ea.
+                            </span>
+                        </p>
+                    </div>
+
+                    
+                    <button>Explore More</button>
+                    
+                    
+                    <div class="media">
+                        <ul>
+                            <li>facebook</li>
+                            <li>instagram</li>
+                            <li>snapchat</li>
+                        </ul>
+                    </div>
+            <!-- @@include('includes/modules/section/section-text-with-image.html') -->
+
+        </main>
+
+    </div>
+</div>
+    </div>
+
+    <script>
+        TweenMax.from(".logo", 1.6, {
+            delay: .2,
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut
+        })
+
+        TweenMax.from(".search", 1.6, {
+            delay: .4,
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut
+        })
+
+        TweenMax.from(".logo-icon", 1.6, {
+            delay: 0,
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut
+        })
+
+        TweenMax.staggerFrom(".text-one", 2, {
+            delay: 2.6,
+            opacity: 0,
+            y: 40,
+            ease: Expo.easeInOut
+        }, 0.2)
+
+        TweenMax.staggerFrom(".text-two", 1.5, {
+            delay: 3.4,
+            opacity: 0,
+            y: -40,
+            ease: Expo.easeInOut
+        }, 0.2)
+        TweenMax.staggerFrom(".text-two label", 1, {
+            delay: 4,
+            opacity: 0,
+
+            ease: Expo.easeInOut
+        }, 0.2)
+
+        TweenMax.staggerFrom("h2", 2, {
+            delay: 4,
+            opacity: 0,
+            x: -60,
+            ease: Expo.easeInOut
+        }, 0.2)
+
+        TweenMax.staggerFrom(".text-three", 2, {
+            delay: 4.7,
+            opacity: 0,
+            y: 40,
+            ease: Expo.easeInOut
+        }, 0.2)
+
+        TweenMax.from("button", 2, {
+            delay: 5.5,
+            opacity: 0,
+            y: -30,
+            ease: Expo.easeInOut
+        })
+
+        TweenMax.from(".line", 2, {
+            delay: 5,
+            opacity: 0,
+            x: -100,
+            ease: Expo.easeInOut
+        })
+
+        TweenMax.from(".tag", 2, {
+            delay: 5.3,
+            opacity: 0,
+            y: -30,
+            ease: Expo.easeInOut
+        })
+
+        TweenMax.staggerFrom(".media ul li", 2, {
+            delay: 6,
+            opacity: 0,
+            y: -40,
+            ease: Expo.easeInOut
+        }, 0.2)
+
+        TweenMax.staggerFrom(".left-right ul li", 2, {
+            delay: 6.4,
+            opacity: 0,
+            y: -40,
+            ease: Expo.easeInOut
+        }, 0.2)
+    </script>
+</body>
+
+</html>
+

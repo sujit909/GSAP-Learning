@@ -1,0 +1,14 @@
+.c{
+  &-leadspace{
+    padding-top: var(--space-3xl-4xl);
+    padding-bottom: var(--space-3xl-4xl);
+    min-height: 80vh;
+    &-eyebrow{
+      padding-bottom:var(--space-s) ;
+    }
+
+    .o-grid{
+      align-items: center;
+    }
+  }
+}

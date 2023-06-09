@@ -1,0 +1,17 @@
+.c-image__col {
+  overflow: hidden;
+  @include media-breakpoint-up(sm) {
+    --column-span: 10;
+    --column-start: 2;
+  }
+
+  .c-image--tight & {
+    --column-span: 10;
+    --column-start: 2;
+
+    @include media-breakpoint-up(sm) {
+      --column-span: 8;
+      --column-start: 3;
+    }
+  }
+}

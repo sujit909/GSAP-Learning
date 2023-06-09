@@ -1,0 +1,74 @@
+.o-button {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  border-radius: 200px;
+  will-change: transform;
+
+  span {
+    display: block;
+    padding: 0.75em 1.5em;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: currentcolor;
+      opacity: 0.2;
+      content: '';
+    }
+  }
+
+  span,
+  &::after {
+    transition: transform 0.5s $transition-timing-menu, opacity 0.5s $transition-timing-menu;
+    will-change: transform;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+    display: block;
+  }
+
+  &::before {
+    border: 1px solid currentcolor;
+    border-radius: inherit;
+    content: '';
+  }
+
+  &::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--theme-text-invert-color);
+    background-color: var(--theme-text-color);
+    border-radius: inherit;
+    content: attr(data-text);
+    transform: translateY(calc(100% + 4px));
+  }
+
+  html:not(.is-mobile) &:hover {
+    span {
+      transform: translateY(-60%);
+      opacity: 0;
+    }
+
+    &::after {
+      transform: translateY(0);
+    }
+  }
+}

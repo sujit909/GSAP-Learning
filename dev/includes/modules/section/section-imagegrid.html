@@ -1,0 +1,9 @@
+<section class="c-image-grid ">
+    <div class="u-container">
+        <div class="o-grid">
+
+            @@for (var i = 0; i < imageGrid.grid.length; i++) { @@include('../repeator/imageGrid.html',
+            `+(JSON.stringify(imageGrid.grid[i]))+`) }
+        </div>
+    </div>
+</section>

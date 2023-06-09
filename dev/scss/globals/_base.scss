@@ -1,0 +1,27 @@
+html {
+    // locomotive scroll
+    &.has-scroll-smooth {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+  
+      [data-scroll-speed] {
+        will-change: transform;
+      }
+    }
+  
+    &.is-transitioning {
+      // cursor: wait !important;
+  
+      *,
+      *::before,
+      *::after {
+        pointer-events: none;
+      }
+    }
+  }
+  
+
+  

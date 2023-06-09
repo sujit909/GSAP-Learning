@@ -1,0 +1,55 @@
+.o-prose {
+  --flow: 2em;
+
+  @extend %flow;
+
+  color: inherit;
+
+  ol, ul {
+    body:not(.tpl-basic) & {
+      list-style-type: none;
+      border-top: 1px solid currentcolor;
+    }
+
+    body.tpl-basic & {
+      padding-left: 1em;
+    }
+  }
+
+  li {
+    body:not(.tpl-basic) & {
+      padding: 0.9em 0;
+      border-bottom: 1px solid currentcolor;
+    }
+  }
+
+  h1 + *,
+  h2 + *,
+  h3 + *,
+  h4 + *,
+  h5 + * {
+    --flow: var(--space-xl);
+  }
+
+  p {
+    font-size: var(--step-0);
+  }
+
+  table {
+    width: 100% !important;
+  }
+
+  td {
+    width: auto !important;
+    padding: 4px;
+    font-size: 14px;
+
+    p {
+      font-size: inherit;
+    }
+  }
+
+  // a:not([class]) {
+  //   color: var(--blue);
+  // }
+}

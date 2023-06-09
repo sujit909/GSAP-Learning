@@ -1,0 +1,117 @@
+.c-text {
+  --gutter-y: 0;
+
+  @include media-breakpoint-up(lg) {
+    --columns: 10;
+    --column-span: 10;
+  }
+}
+
+.c-text__container {
+  @include media-breakpoint-up(lg) {
+    --padding: calc(var(--container-padding) + var(--column-width) + var(--gutter-x));
+
+    padding-right: var(--padding);
+    padding-left: var(--padding);
+  }
+}
+
+.c-text__labels {
+  @include media-breakpoint-up(sm) {
+    p:first-child:not(:last-child) {
+      --column-span: 2;
+    }
+
+    p:last-child:not(:first-child) {
+      --column-span: 10;
+      --column-start: 3;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    p:first-child:not(:last-child) {
+      margin-right: 25%;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    p:last-child:not(:first-child) {
+      --column-span: 8;
+      --column-start: 3;
+    }
+  }
+
+  p {
+    --column-span: 12;
+
+    padding-bottom: var(--space-m);
+    border-bottom: 1px solid currentcolor;
+
+    @include media-breakpoint-down(sm) {
+      &:not(:last-child) {
+        padding-bottom: 0;
+        border: none;
+      }
+    }
+  }
+}
+
+.c-text__title {
+  --index: 2;
+
+  margin-top: var(--space-l);
+  font-size: var(--step-8);
+}
+
+.c-text__title-number {
+  --column-span: 12;
+
+  @include media-breakpoint-up(sm) {
+    --column-span: 2;
+
+    .c-text--right-aligned-number & {
+      order: 2;
+      text-align: right;
+    }
+  }
+}
+
+.c-text__title-text {
+  --column-span: 12;
+
+  .c-text__title-number + & {
+    @include media-breakpoint-up(sm) {
+      --column-span: 10;
+    }
+
+    @include media-breakpoint-up(lg) {
+      --column-span: 8;
+    }
+  }
+}
+
+.c-text__body {
+  --index: 3;
+
+  margin-top: var(--step-6);
+
+  .c-text--indented-headings & {
+    h1, h2, h3, h4, h5 {
+      @include media-breakpoint-up(sm) {
+        margin-left: calc(var(--column-width-gutter) * 2);
+      }
+    }
+  }
+
+  > p, ul {
+    @include media-breakpoint-up(sm) {
+      margin-right: var(--column-width-gutter);
+      margin-left: calc(var(--column-width-gutter) * 5);
+
+      .c-text--longer-text & {
+        margin-right: 0;
+        margin-left: calc(var(--column-width-gutter) * 4);
+      }
+    }
+  }
+}
